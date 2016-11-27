@@ -20,10 +20,10 @@ function parseResponse(response) {
       return parsedResponse.data;
     }
   } catch (err) {
-    console.warn('Error while parsing JSON', err);
+    throw new Error('Error while parsing JSON', err);
   }
 
-  return {};
+  throw new Error('Error while parsing JSON');
 }
 
 export default parseResponse;
